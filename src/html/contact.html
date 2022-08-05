@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/ico">
+
+    <!--Box Icons-->
+    <link rel="stylesheet" href="assets/fonts/boxicons/css/boxicons.min.css">
+
+    <!--AOS Animations-->
+    <link rel="stylesheet" href="assets/vendor/node_modules/css/aos.css">
+
+    <!--Iconsmind Icons-->
+    <link rel="stylesheet" href="assets/fonts/iconsmind/iconsmind.css">
+
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&family=Source+Serif+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+    <!--Master slider-->
+    <link rel="stylesheet" href="assets/vendor/masterslider/style/masterslider.css">
+    <link rel="stylesheet" href="assets/vendor/masterslider/skins/black-1/style.css">
+
+    <!--Swiper slider-->
+    <link rel="stylesheet" href="assets/vendor/node_modules/css/swiper-bundle.min.css">
+
+
+    <!-- Main CSS -->
+    <link href="assets/css/theme.min.css" rel="stylesheet">
+
+    <title>그라운드업벤처스에 오신것을 환영합니다.</title>
+  </head>
+
+  <body>
+     <!--Preloader Spinner-->
+     <div className="spinner-loader bg-tint-primary">
+        <div className="spinner-border text-primary" role="status">
+        </div>
+        <span className="small d-block ms-2">Loading...</span>
+    </div>
+    <!--Header Start-->
+    <header className="header-transparent sticky-fixed">
+      <nav className="navbar navbar-expand-sm fixed-top navbar-dark bg-dark navbar-link-white">
+        <!--Navbar-fixed-background-->
+        <div className="navbar-fixed-bg position-absolute"></div>
+        <div className="container position-relative z-index-1">
+          <a className="av-item me-3 ms-lg-2 me-lg-0" href="index.html">
+            <img src="assets/img/logo_gu.png"  width='110' alt="" className="img-fluid navbar-brand-sticky">
+            <!--<img src="assets/img/logo_gu.png"  width='120' alt="" className="img-fluid navbar-brand-transparent">-->
+          </a>
+          <div className="d-flex align-items-center navbar-no-collapse-items order-lg-last">
+            <button className="navbar-toggler order-last" type="button" data-bs-toggle="collapse"
+              data-bs-target="#mainNavbarTheme" aria-controls="mainNavbarTheme" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon">
+                <i></i>
+              </span>
+            </button>
+            <div className="nav-item me-3 ms-lg-2 me-lg-0">
+              <a href="#" className="btn btn-success btn-sm">상담신청</a>
+            </div>
+          </div>
+          <div className="collapse navbar-collapse" id="mainNavbarTheme">
+            <!--Navbar items-->
+            <ul className="navbar-nav ms-auto">
+                <li className="nav-item dropdown">
+                  <a className="nav-link" href="index.html" aria-haspopup="true" aria-expanded="false">HOME
+                  </a>
+                </li>
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown"  href="ir.html" role="button" 
+                    aria-haspopup="true" aria-expanded="false" data-bs-auto-close="outside">그라운드업 서비스
+                  </a>
+                  <div className="dropdown-menu">
+                    <div className="dropend">
+                      <a className="dropdown-item" href="ir.html">투자유치 서비스</a>
+                    </div>
+                    <div className="dropend">
+                      <a className="dropdown-item" href="Accounting.html">세무회계 서비스</a>
+                    </div>
+                    <div className="dropend">
+                      <a className="dropdown-item" href="growthhacking.html">디지털마케팅 서비스</a>
+                    </div>
+                    </div>
+                </li>
+                <li className="nav-item dropdown">
+                  <a className="nav-link  dropdown-toggle" data-bs-toggle="dropdown"  href="#" role="button"
+                    aria-haspopup="true" aria-expanded="false" data-bs-auto-close="outside">포트폴리오
+                  </a>
+                  <div className="dropdown-menu">
+                    <div className="dropend">
+                      <a className="dropdown-item" href="#">투자유치 + 디지털 마케팅</a>
+                    </div>
+                    </div>
+                </li>
+                <li className="nav-item dropdown">
+                  <a className="nav-link   dropdown-toggle" data-bs-toggle="dropdown"  href="#" role="button" 
+                    aria-haspopup="true" aria-expanded="false" data-bs-auto-close="outside">무료 지원</a>
+                    <div className="dropdown-menu">
+                      <div className="dropend">
+                        <a className="dropdown-item" href="#">튜토리얼 자료 (자금 조달 가이드 등)</a>
+                      </div>
+                      <div className="dropend">
+                        <a className="dropdown-item" href="#">IR 툴킷 (시스템화 예정)</a>
+                      </div>
+                      <div className="dropend">
+                        <a className="dropdown-item" href="#">디자인 템플릿 (업종별 강화)</a>
+                      </div>
+                    </div> 
+                </li>
+                <li className="nav-item dropdown">
+                  <a className="nav-link"  href="https://groundup.poincampus.com/" role="button" target="_blank"
+                    aria-haspopup="true" aria-expanded="false" data-bs-auto-close="outside">CAMPUS</a>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+    <!--Main content-->
+    <main className="me-2 ms-2">
+        <!--page-hero-->
+        <section className="bg-white position-relative">
+            <div className="bg-pattern text-light w-100 h-100 start-0 top-0 position-absolute"></div>
+            <div className="bg-gradientwhite flip-y w-50 h-100 start-50 top-0 translate-middle-x position-absolute"></div>
+            <div className="container pt-11 pt-lg-14 pb-9 pb-lg-11 position-relative z-index-1">
+                <div className="row align-items-center justify-content-center">
+                    <div className=" col-xl-4 col-lg-5 col-md-6 col-sm-8 z-index-2">
+
+                        <h2 className="mb-1 display-6">
+                          반갑습니다!
+                        </h2>
+                        <p className="mb-4 text-muted">
+                          고객님의 연락처와 간략한 상담 내용을 아래에 남겨주시면 검토후 담당자를 통해 연락을 드리겠습니다.
+                        </p>
+                        <div className="position-relative">
+                            <div>
+                                <form className="needs-validation" novalidate>
+                                  <!--input-with-icon-->
+                                  <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                      <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                                      <div className="dropdown-menu">
+                                        <a className="dropdown-item" href="#">Action</a>
+                                        <a className="dropdown-item" href="#">Another action</a>
+                                        <a className="dropdown-item" href="#">Something else here</a>
+                                        <div role="separator" className="dropdown-divider"></div>
+                                        <a className="dropdown-item" href="#">Separated link</a>
+                                      </div>
+                                    </div>
+                                    <input type="text" className="form-control" aria-label="Text input with dropdown button">
+                                  </div>
+                                    <div className="input-icon-group mb-3">
+                                        <span className="input-icon">
+                                          <i className="bx bx-user"></i>
+                                        </span>
+                                        <input type="text" className="form-control" required id="signUpName" autofocus
+                                            placeholder="이름을 입력해주세요">
+                                    </div>
+
+                                    <!--input-with-icon-->
+                                    <div className="input-icon-group mb-3">
+                                        <span className="input-icon">
+                                            <i className="bx bx-envelope"></i>
+                                        </span>
+                                        </span>
+                                        <input type="email" className="form-control" required id="signUpMail"
+                                            placeholder="연락받을 이메일을 남겨주세요">
+                                    </div>
+
+                                    <!--input-with-icon-->
+                                    <div className="input-icon-group mb-3">
+                                        <span className="input-icon">
+                                            <i className="bx bx-phone"></i>
+                                        </span>
+                                        </span>
+                                        <input type="phone" className="form-control" required id="signUpMail"
+                                            placeholder="연락받을 핸드폰 번호를 남겨주세요">
+                                    </div>
+
+                                    <div className="mb-3">
+                                        <label for="comment text-grey">상담내용을 간략히 남겨주세요</label>
+                                        <textarea className="form-control" required id="Message"
+                                            rows="5" name="text"></textarea>
+                                    </div>
+                                    <div className="mb-3 d-flex justify-content-between">
+                                      <div className="form-check">
+                                          <input className="form-check-input" required type="checkbox" value=""
+                                              id="flexCheckDefault" checked>
+                                          <label className="form-check-label small text-muted" for="flexCheckDefault">
+                                              스타트업 지원사업과 그라운드업의 소식과 혜택이 담긴 뉴스레터를 받아보겠습니다. 
+                                          </label>
+                                      </div>
+                                  </div>                                    
+                                    <div className="d-grid">
+                                        <button className="btn btn-dark" type="submit">
+                                            상담 신청하기
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--Footer start-->
+    <footer id="footer" className="bg-dark text-white position-relative">
+        <div className="container pt-9 pt-lg-11">
+            <div className="row">
+                <div className="col-md-12 col-lg-4 mb-5 h-100 me-auto">
+                    <!--Title-->
+                    <h2 className="display-6 mb-0 position-relative">
+                        Work with us
+                    </h2>
+                    <div className="pt-3">
+                        <a className="link-underline fs-5" href="mailto:mail@doamin.com">mail@domain.com</a>
+                    </div>
+                </div>
+                <div className="col-sm-4 col-lg-2 mb-5 mb-md-0 ms-auto h-100">
+                    <!--Title-->
+                    <h6 className="small mb-3 mb-lg-4">Learn</h6>
+                    <!--Nav-->
+                    <ul className="nav flex-column mb-0">
+                        <li className="nav-item"><a className="nav-link" href="#!">Design</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Digital</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Development</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Branding</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Graphics</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Process</a></li>
+                    </ul>
+                </div>
+                <!--/.Col-->
+                <div className="col-sm-4 col-lg-2 mb-5 h-100">
+                    <!--Title-->
+                    <h6 className="small mb-3 mb-lg-4">Resources</h6>
+                    <!--Nav-->
+                    <ul className="nav flex-column mb-0">
+                        <li className="nav-item"><a className="nav-link" href="#!">Elements</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Pricing</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Features</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Blog</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Credits</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Updates</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Help center</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Events</a></li>
+                    </ul>
+                </div>
+                <!--/.Col-->
+                <div className="col-sm-4 col-lg-3 col-xl-2 mb-5 mb-sm-0 h-100">
+                    <!--Title-->
+                    <h6 className="small mb-3 mb-lg-4">Company</h6>
+                    <!--Nav-->
+                    <ul className="nav flex-column mb-0">
+                        <li className="nav-item"><a className="nav-link" href="#!">About</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Awwards</a></li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#!">Careers
+                                <span className="badge badge-pill ms-1 bg-primary">Hiring</span>
+                            </a>
+                        </li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Customers</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Affiliate</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Contact us</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Terms of use</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">Privacy policy</a></li>
+                    </ul>
+                </div>
+                <!--/.Col-->
+            </div>
+            <hr className="mb-5 mt-0">
+        </div> <!-- / .container -->
+        <div className="pb-5">
+            <div className="container">
+                <div className="row justify-content-md-between align-items-center">
+                    <div className="d-flex mb-3 mb-md-0 col-sm-6 col-md-4">
+                        <!-- Social button -->
+                        <a href="#!" className="d-inline-block mb-1 me-2 si rounded-pill si-hover-facebook">
+                            <i className="bx bxl-facebook fs-5"></i>
+                            <i className="bx bxl-facebook fs-5"></i>
+                        </a>
+                        <!-- Social button -->
+                        <a href="#!" className="d-inline-block mb-1 me-2 si rounded-pill si-hover-twitter">
+                            <i className="bx bxl-twitter fs-5"></i>
+                            <i className="bx bxl-twitter fs-5"></i>
+                        </a>
+                        <!-- Social button -->
+                        <a href="#!" className="d-inline-block mb-1 me-2 si rounded-pill si-hover-linkedin">
+                            <i className="bx bxl-linkedin fs-5"></i>
+                            <i className="bx bxl-linkedin fs-5"></i>
+                        </a>
+                        <!-- Social button -->
+                        <a href="#!" className="d-inline-block mb-1 si rounded-pill si-hover-instagram">
+                            <i className="bx bxl-instagram fs-5"></i>
+                            <i className="bx bxl-instagram fs-5"></i>
+                        </a>
+                    </div>
+                    <div className="col-sm-6 col-md-4 text-sm-end">
+                        <span className="d-block lh-sm small text-muted">© Copyright
+                            <script>
+                                document.write(new Date().getFullYear())
+
+                            </script>. Assan
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- begin Back to Top button -->
+    <a href="#" className="toTop">
+      <i className="bx bxs-up-arrow"></i>
+    </a>
+    <!-- scripts -->
+    <script src="assets/js/theme.bundle.js"></script>
+    <!--Mastert Slider start (Include jquery before master slider js)-->
+    <script src="assets/vendor/node_modules/js/jquery.min.js"></script>
+    <script src="assets/vendor/masterslider/jquery.easing.min.js"></script>
+    <script src="assets/vendor/masterslider/masterslider.min.js"></script>
+    <script>
+      var slider = new MasterSlider();
+      slider.setup('masterslider', {
+        width: 1140,
+        height: 660,
+        minHeight: 400,
+        space: 0,
+        start: 1,
+        grabCursor: false,
+        layout: "fullwidth",
+        wheel: false,
+        autoplay: true,
+        instantStartLayers: true,
+        loop: true,
+        view: "basic",
+        instantStartLayers: true,
+      });
+      slider.control('arrows');
+    </script>
+
+
+    <!--Swiper slider-->
+
+    <script src="assets/vendor/node_modules/js/swiper-bundle.min.js"></script>
+    <script>
+      //swiper-3
+      var swiperProjects = new Swiper(".swiper-projects", {
+        autoHeight: true,
+        spaceBetween: 16,
+        breakpoints: {
+          640: { slidesPerView: 1, spaceBetween: 16 },
+          768: { slidesPerView: 2, spaceBetween: 16 },
+          1024: { slidesPerView: 2, spaceBetween: 16 }
+        },
+        pagination: {
+          el: ".swiperProjects-pagination", clickable: true
+        },
+        navigation: {
+          nextEl: ".swiperProjects-button-next", prevEl: ".swiperProjects-button-prev"
+        }
+      });
+      //swiper-auto
+      var swiperAuto = new Swiper(".swiper-testimonials", {
+        slidesPerView: "auto", loop: true,
+         centeredSlides: true,
+          spaceBetween: 16,
+          effect: "fade",
+                grabCursor: true,
+        pagination: {
+          el: ".swiperAuto-pagination", clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiperAuto-button-next", prevEl: ".swiperAuto-button-prev",
+        }
+      });
+    </script>
+  </body>
+
+</html>
