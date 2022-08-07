@@ -1,19 +1,70 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import "./App.css";
+import "./assets/css/theme.min.css";
+import "./assets/fonts/boxicons/css/boxicons.css";
+import "./assets/vendor/node_modules/css/aos.css";
+import "./assets/fonts/iconsmind/iconsmind.css";
+import "./assets/vendor/masterslider/style/masterslider.css";
+import "./assets/vendor/masterslider/skins/black-1/style.css";
+import "./assets/vendor/node_modules/css/swiper-bundle.min.css";
+import Carousel from 'react-bootstrap/Carousel';
+//import * as theme_bundle from "./assets/js/theme.bundle";
+//import * as "./assets/vendor/node_modules/js/jquery.min";
+//import * as masterslider from "./assets/vendor/masterslider/masterslider";
 
-function Loading() {
+
+
+
+// 상단 메뉴 변경 부분
+const menus = [
+  {id:1, menu_link:"main", menu_text:"HOME"},
+  {id:2, menu_link:"ir", menu_text:"투자유치 서비스"},
+  {id:3, menu_link:"accounting", menu_text:"세무회계 서비스"},
+  {id:4, menu_link:"dmarketing", menu_text:"디지털마케팅 서비스"}
+];
+
+//OurCustomer 데이터
+const customers = [
+  {id:1, name:"CJ", logo_url:"cj.jpg"},
+  {id:2, name:"SK Hynix", logo_url:"SK_Hynix.png"},
+  {id:3, name:"Samsung c-lab", logo_url:"c-lab.jpg"},
+  {id:4, name:"Hyundai", logo_url:"hyundai.jpg"},
+  {id:5, name:"서울핀테크랩", logo_url:"logo1.png"},
+  {id:6, name:"한국콘텐츠진흥원", logo_url:"logo2.png"},
+  {id:7, name:"예술경영지원센터", logo_url:"logo3.png"},
+  {id:8, name:"한국문화정보원", logo_url:"logo4.jpg"},
+  {id:9, name:"경기창조경제혁신센터", logo_url:"logo5.png"},
+  {id:10, name:"경북창조경제혁신센터", logo_url:"logo6.jpg"},
+  {id:11, name:"", logo_url:"logo7.jfif"},
+  {id:12, name:"충남창조경제혁신센터", logo_url:"logo8.png"},
+  {id:13, name:"부산정보산업진흥원", logo_url:"logo9.png"}
+];
+
+function Navs(props) {
+  const ms = []
+  for (let i=0;i<props.menus.length;i++) {
+    let menu = props.menus[i];
+    ms.push(
+      <li className="nav-item dropdown" key={menu.id}>
+        <a className="nav-link" href={menu.menu_link}>
+          {menu.menu_text}
+        </a>
+      </li>
+    )
+  }
   return (
-    <div className="spinner-loader bg-tint-primary">
-      <div className="spinner-border text-primary" role="status"></div>
-      <span className="small d-block ms-2">Loading...</span>
-    </div>
+    <div className="collapse navbar-collapse" id="mainNavbarTheme">
+    <ul className="navbar-nav ms-auto me-5">
+      {ms}
+    </ul>
+  </div>
   );
 }
 
 function Header(props) {
   console.log("props", props);
   return (
-    <header className="header-transparent sticky-fixed">
+    <header id="heaer" className="header-transparent sticky-fixed">
       <nav className="navbar navbar-expand-lg fixed-top navbar-dark navbar-link-white">
         <div className="navbar-fixed-bg position-absolute"></div>
         <div className="container position-relative z-index-1">
@@ -39,57 +90,13 @@ function Header(props) {
                 <i></i>
               </span>
             </button>
-            <div className="nav-item me-3 ms-lg-2 me-lg-0">
+            <div className="nav-item me-3 ms-lg-2 me-lg-0 ms-2">
               <a href="contact.html" className="btn btn-success btn-sm">
                 상담하기
               </a>
             </div>
           </div>
-          <div className="collapse navbar-collapse" id="mainNavbarTheme">
-            <ul className="navbar-nav ms-auto me-5">
-              <li className="nav-item dropdown">
-                <a className="nav-link" href="index.html">
-                  HOME
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link"
-                  href="ir.html"
-                  role="button"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  data-bs-auto-close="outside"
-                >
-                  투자유치 서비스
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link"
-                  href="Accounting.html"
-                  role="button"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  data-bs-auto-close="outside"
-                >
-                  세무회계 서비스
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link"
-                  href="growthhacking.html"
-                  role="button"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  data-bs-auto-close="outside"
-                >
-                  디지털 마케팅
-                </a>
-              </li>
-            </ul>
-          </div>
+          <Navs menus={menus}></Navs>
         </div>
       </nav>
     </header>
@@ -98,162 +105,31 @@ function Header(props) {
 
 function Mainslider() {
   return (
-    <section id="tops" className="overflow-hidden position-relative">
-      <div className="position-relative overflow-hidden">
-        <div className="ms-skin-black-2 master-slider" id="masterslider">
-          <div
-            className="ms-slide bg-dark"
-            data-delay="3"
-            data-fill-mode="fill"
-          >
-            <img
-              className="opacity-25"
-              src="./assets/vendor/masterslider/style/blank.gif"
-              alt=""
-              title=""
-              data-src="./assets/img/smtv/gv_index_banner_1.jpg"
-            />
-            <div
-              className="ms-layer ms-title text-white"
-              data-effect="front(600)"
-              data-duration="1200"
-              data-delay="600"
-              data-ease="easeInOutCubic"
-              data-hide-effect="top(long,false)"
-              data-offset-x="0"
-              data-offset-y="-30"
-              data-origin="mc"
-              data-position="center"
-              data-masked="false"
-            >
-              <div className="text-center display-5 ms-4 me-4">
-                대한민국 스타트업 성장 파트너
-              </div>
-              <div className="text-center display-1 ms-4 me-4">
-                그라운드업 벤처스
-              </div>
-            </div>
-          </div>
-          <div
-            className="ms-slide bg-dark"
-            data-delay="3"
-            data-fill-mode="fill"
-          >
-            <img
-              className="opacity-25"
-              src="./assets/vendor/masterslider/style/blank.gif"
-              alt=""
-              title=""
-              data-src="./assets/img/smtv/gv_index_banner_2.jpg"
-            />
-            <div
-              className="ms-layer ms-title text-center text-white"
-              data-effect="skewbottom(0,150)"
-              data-duration="1000"
-              data-delay="600"
-              data-ease="easeInOutCubic"
-              data-hide-effect="top(long,false)"
-              data-offset-x="0"
-              data-offset-y="0"
-              data-origin="mc"
-              data-position="center"
-              data-masked="false"
-            >
-              <div className="text-center display-5 ms-4 me-4">
-                비즈니스 모델에서 투자유치까지
-                <br />
-              </div>
-              <div className="text-center display-2 ms-4 me-4">
-                그라운드업 투자유치 서비스
-              </div>
-              <a href="ir.html" className="ms-btn">
-                <span className="btn btn-lg btn-primary">더 알아보기</span>
-              </a>
-            </div>
-          </div>
-          <div
-            className="ms-slide bg-dark"
-            data-delay="3"
-            data-fill-mode="fill"
-          >
-            <img
-              className="opacity-25"
-              src="./assets/vendor/masterslider/style/blank.gif"
-              alt=""
-              title=""
-              data-src="./assets/img/smtv/gv_index_banner_3.jpg"
-            />
-            <div
-              className="ms-layer text-center ms-title text-white"
-              data-effect="skewleft(23,500)"
-              data-duration="1000"
-              data-delay="900"
-              data-ease="easeInOutSine"
-              data-hide-effect="top(long,false)"
-              data-offset-x="0"
-              data-offset-y="-30"
-              data-origin="mc"
-              data-position="center"
-              data-masked="false"
-            >
-              <div className="text-center display-5 ms-4 me-4">
-                스타트업 세무회계의 간편한 해법
-              </div>
-              <div className="text-center display-2 ms-4 me-4">
-                그라운드업 세무-회계 서비스
-              </div>
-              <a href="#" className="ms-btn">
-                <span className="btn btn-lg btn-primary btn-sm">
-                  더 알아보기
-                </span>
-              </a>
-            </div>
-          </div>
-          <div
-            className="ms-slide bg-dark"
-            data-delay="3"
-            data-fill-mode="fill"
-          >
-            <img
-              className="opacity-25"
-              src="./assets/vendor/masterslider/style/blank.gif"
-              alt=""
-              title=""
-              data-src="./assets/img/smtv/gv_index_banner_4.jpg"
-            />
-            <div
-              className="ms-layer text-center ms-title text-white"
-              data-effect="skewleft(23,500)"
-              data-duration="1000"
-              data-delay="900"
-              data-ease="easeInOutSine"
-              data-hide-effect="top(long,false)"
-              data-offset-x="0"
-              data-offset-y="-30"
-              data-origin="mc"
-              data-position="center"
-              data-masked="false"
-            >
-              <div className="text-center display-5 ms-4 me-4">
-                스타트업의 지속적 성장을 위한 유일한 전략,
-              </div>
-              <div className="text-center display-2 ms-4 me-4">
-                그로스 해킹 서비스
-              </div>
-            </div>
-            <a href="#" className="ms-layer ms-btn">
-              <span className="btn btn-lg btn-primary btn-sm">더 알아보기</span>
-            </a>
-          </div>
+    <section className="bg-dark text-white position-relative overflow-hidden">
+          {newFunction()}
+    </section>  
+  );
+
+  function newFunction() {
+    return (
+    <Carousel>
+      <Carousel.Item>
+      <div className="bg-dark">
+        <img className="img-fluid" alt="" title="" src="./assets/img/smtv/gv_index_banner_1.jpg" />
+        <div className="text-white">
+          <div className="text-center display-5 ms-4 me-4">대한민국 스타트업 성장 파트너</div>
+          <div className="text-center display-1 ms-4 me-4">그라운드업 벤처스</div>
         </div>
       </div>
-    </section>
-  );
+      </Carousel.Item>
+    </Carousel>
+    );  
+  }
 }
 
 function Secondslider() {
   return (
-    <section className="position-relative overflow-hidden">
+    <section id="2nd" className="position-relative overflow-hidden">
       <div className="container py-9 py-lg-11 position-relative z-index-1">
         <div className="row align-items-center justify-content-between">
           <div className="order-first col-lg-7">
@@ -535,9 +411,25 @@ function Thirdslider() {
   );
 }
 
+
 function Ourcustomer() {
+  const cust_list = [];
+  for (let c=0;c<customers.length;c++){
+    let cust = customers[c];
+    cust_list.push(
+      <div className="col" key={cust.id}>
+        <div className="d-flex align-items-center justify-content-center my-4">
+          <img
+            src={"./assets/img/logo/"+cust.logo_url}
+            alt={cust.name}
+            className="img-fluid image-1"
+          />
+        </div>
+      </div>
+    );
+  }
   return (
-    <section className="position-relative bg-white overflow-hidden">
+    <section id="outcust" className="position-relative bg-white overflow-hidden">
       <div className="container pt-9 pt-lg-11 position-relative z-index-1">
         <div className="mb-7 w-lg-60 mx-auto text-center">
           <div className="mb-3" data-aos data-aos-once="false">
@@ -553,123 +445,7 @@ function Ourcustomer() {
           <div className="mx-auto width-8x pt-1 bg-primary mt-4"></div>
         </div>
         <div className="row mb-7 mb-lg-11 row-cols-2 row-cols-md-3 row-cols-lg-5 justify-content-center">
-          <div className="col">
-            <div className="d-flex align-items-center justify-content-center my-4">
-              <img
-                src="./assets/img/logo/cj.jpg"
-                alt=""
-                className="img-fluid image-1"
-              />
-            </div>
-          </div>
-          <div className="col">
-            <div className="d-flex align-items-center justify-content-center my-4">
-              <img
-                src="./assets/img/logo/SK_Hynix.png"
-                alt=""
-                className="img-fluid"
-              />
-            </div>
-          </div>
-          <div className="col">
-            <div className="d-flex align-items-center justify-content-center my-4">
-              <img
-                src="./assets/img/logo/c-lab.jpg"
-                alt=""
-                className="img-fluid"
-              />
-            </div>
-          </div>
-          <div className="col">
-            <div className="d-flex align-items-center justify-content-center my-4">
-              <img
-                src="./assets/img/logo/hyundai.jpg"
-                alt=""
-                className="img-fluid"
-              />
-            </div>
-          </div>
-          <div className="col">
-            <div className="d-flex align-items-center justify-content-center my-4">
-              <img
-                src="./assets/img/logo/logo 1.png"
-                alt=""
-                className="img-fluid"
-              />
-            </div>
-          </div>
-          <div className="col">
-            <div className="d-flex align-items-center justify-content-center my-4">
-              <img
-                src="./assets/img/logo/logo 2.png"
-                alt=""
-                className="img-fluid"
-              />
-            </div>
-          </div>
-          <div className="col">
-            <div className="d-flex align-items-center justify-content-center my-4">
-              <img
-                src="./assets/img/logo/logo 3.png"
-                alt=""
-                className="img-fluid"
-              />
-            </div>
-          </div>
-          <div className="col">
-            <div className="d-flex align-items-center justify-content-center my-4">
-              <img
-                src="./assets/img/logo/logo 4.jpg"
-                alt=""
-                className="img-fluid"
-              />
-            </div>
-          </div>
-          <div className="col">
-            <div className="d-flex align-items-center justify-content-center my-4">
-              <img
-                src="./assets/img/logo/logo 5.png"
-                alt=""
-                className="img-fluid"
-              />
-            </div>
-          </div>
-          <div className="col">
-            <div className="d-flex align-items-center justify-content-center my-4">
-              <img
-                src="./assets/img/logo/logo 6.jpg"
-                alt=""
-                className="img-fluid"
-              />
-            </div>
-          </div>
-          <div className="col">
-            <div className="d-flex align-items-center justify-content-center my-4">
-              <img
-                src="./assets/img/logo/logo 7.jfif"
-                alt=""
-                className="img-fluid"
-              />
-            </div>
-          </div>
-          <div className="col">
-            <div className="d-flex align-items-center justify-content-center my-4">
-              <img
-                src="./assets/img/logo/logo 8.png"
-                alt=""
-                className="img-fluid"
-              />
-            </div>
-          </div>
-          <div className="col">
-            <div className="d-flex align-items-center justify-content-center my-4">
-              <img
-                src="./assets/img/logo/logo 9.png"
-                alt=""
-                className="img-fluid"
-              />
-            </div>
-          </div>
+          {cust_list}
         </div>
       </div>
     </section>
@@ -805,10 +581,11 @@ function Gunews() {
     </section>
   );
 }
+
 function App() {
   return (
     <>
-      <Loading></Loading>
+
       <Header></Header>
       <main>
         <Mainslider></Mainslider>
@@ -821,5 +598,23 @@ function App() {
     </>
   );
 }
+//theme_bundle.i();
+
+//var slider = masterslider;
+//slider.setup('masterslider', {
+//  width: 1140,
+// height: 660,
+//  minHeight: 400,
+//  space: 0,
+//  start: 1,
+//  grabCursor: false,
+//  layout: "fullwidth",
+//  wheel: false,
+//  autoplay: true,
+//  instantStartLayers: true,
+//  loop: true,
+//  view: "basic"
+//});
+//slider.control('arrows');
 
 export default App;
