@@ -1,3 +1,4 @@
+/* eslint-disable */
 !(function i(o, r, s) {
   function a(e, t) {
     if (!r[e]) {
@@ -8135,17 +8136,9 @@
             );
           }),
           "function" == typeof define && define.amd
-            ? define(
-                ["desandro-matches-selector/matches-selector"],
-                function (t) {
-                  return r(o, t);
-                }
-              )
-            : "object" == (void 0 === e ? "undefined" : i(e)) && e.exports
-            ? (e.exports = r(o, t("desandro-matches-selector")))
-            : (o.fizzyUIUtils = r(o, o.matchesSelector));
+
       },
-      { "desandro-matches-selector": 5 },
+
     ],
     8: [
       function (t, e, n) {
@@ -11582,14 +11575,9 @@
             );
           }),
           "function" == typeof define && define.amd
-            ? define(["ev-emitter/ev-emitter"], function (t) {
-                return o(i, t);
-              })
-            : "object" == (void 0 === e ? "undefined" : d(e)) && e.exports
-            ? (e.exports = o(i, t("ev-emitter")))
-            : (i.imagesLoaded = o(i, i.EvEmitter));
+
       },
-      { "ev-emitter": 6 },
+
     ],
     11: [
       function (t, e, n) {
@@ -11933,55 +11921,7 @@
             );
           }),
           "function" == typeof define && define.amd
-            ? define(
-                [
-                  "outlayer/outlayer",
-                  "get-size/get-size",
-                  "desandro-matches-selector/matches-selector",
-                  "fizzy-ui-utils/utils",
-                  "./item",
-                  "./layout-mode",
-                  "./layout-modes/masonry",
-                  "./layout-modes/fit-rows",
-                  "./layout-modes/vertical",
-                ],
-                function (t, e, n, i, o, r) {
-                  return a(s, t, 0, n, i, o, r);
-                }
-              )
-            : "object" == (void 0 === e ? "undefined" : i(e)) && e.exports
-            ? (e.exports = a(
-                s,
-                t("outlayer"),
-                t("get-size"),
-                t("desandro-matches-selector"),
-                t("fizzy-ui-utils"),
-                t("./item"),
-                t("./layout-mode"),
-                t("./layout-modes/masonry"),
-                t("./layout-modes/fit-rows"),
-                t("./layout-modes/vertical")
-              ))
-            : (s.Isotope = a(
-                s,
-                s.Outlayer,
-                s.getSize,
-                s.matchesSelector,
-                s.fizzyUIUtils,
-                s.Isotope.Item,
-                s.Isotope.LayoutMode
-              ));
-      },
-      {
-        "./item": 12,
-        "./layout-mode": 13,
-        "./layout-modes/fit-rows": 14,
-        "./layout-modes/masonry": 15,
-        "./layout-modes/vertical": 16,
-        "desandro-matches-selector": 5,
-        "fizzy-ui-utils": 7,
-        "get-size": 8,
-        outlayer: 20,
+
       },
     ],
     12: [
@@ -12039,12 +11979,9 @@
             );
           }),
           "function" == typeof define && define.amd
-            ? define(["outlayer/outlayer"], r)
-            : "object" == (void 0 === e ? "undefined" : i(e)) && e.exports
-            ? (e.exports = r(t("outlayer")))
-            : ((o.Isotope = o.Isotope || {}), (o.Isotope.Item = r(o.Outlayer)));
+
       },
-      { outlayer: 20 },
+
     ],
     13: [
       function (t, e, n) {
@@ -12140,13 +12077,9 @@
             );
           }),
           "function" == typeof define && define.amd
-            ? define(["get-size/get-size", "outlayer/outlayer"], r)
-            : "object" == (void 0 === e ? "undefined" : i(e)) && e.exports
-            ? (e.exports = r(t("get-size"), t("outlayer")))
-            : ((o.Isotope = o.Isotope || {}),
-              (o.Isotope.LayoutMode = r(o.getSize, o.Outlayer)));
+
       },
-      { "get-size": 8, outlayer: 20 },
+
     ],
     14: [
       function (t, e, n) {
@@ -12203,12 +12136,9 @@
             );
           }),
           "function" == typeof define && define.amd
-            ? define(["../layout-mode"], r)
-            : "object" == (void 0 === n ? "undefined" : i(n))
-            ? (e.exports = r(t("../layout-mode")))
-            : r(o.Isotope.LayoutMode);
+
       },
-      { "../layout-mode": 13 },
+
     ],
     15: [
       function (t, e, n) {
@@ -12254,12 +12184,9 @@
             );
           }),
           "function" == typeof define && define.amd
-            ? define(["../layout-mode", "masonry-layout/masonry"], r)
-            : "object" == (void 0 === e ? "undefined" : i(e)) && e.exports
-            ? (e.exports = r(t("../layout-mode"), t("masonry-layout")))
-            : r(o.Isotope.LayoutMode, o.Masonry);
+
       },
-      { "../layout-mode": 13, "masonry-layout": 18 },
+
     ],
     16: [
       function (t, e, n) {
@@ -12303,12 +12230,9 @@
             );
           }),
           "function" == typeof define && define.amd
-            ? define(["../layout-mode"], r)
-            : "object" == (void 0 === e ? "undefined" : i(e)) && e.exports
-            ? (e.exports = r(t("../layout-mode")))
-            : r(o.Isotope.LayoutMode);
+
       },
-      { "../layout-mode": 13 },
+
     ],
     17: [
       function (t, e, O) {
@@ -14249,12 +14173,9 @@
             );
           }),
           "function" == typeof define && define.amd
-            ? define(["outlayer/outlayer", "get-size/get-size"], r)
-            : "object" == (void 0 === e ? "undefined" : i(e)) && e.exports
-            ? (e.exports = r(t("outlayer"), t("get-size")))
-            : (o.Masonry = r(o.Outlayer, o.getSize));
+
       },
-      { "get-size": 8, outlayer: 20 },
+
     ],
     19: [
       function (t, e, n) {
@@ -14558,13 +14479,9 @@
             );
           }),
           "function" == typeof define && define.amd
-            ? define(["ev-emitter/ev-emitter", "get-size/get-size"], r)
-            : "object" == (void 0 === e ? "undefined" : i(e)) && e.exports
-            ? (e.exports = r(t("ev-emitter"), t("get-size")))
-            : ((o.Outlayer = {}),
-              (o.Outlayer.Item = r(o.EvEmitter, o.getSize)));
+
       },
-      { "ev-emitter": 6, "get-size": 8 },
+
     ],
     20: [
       function (t, e, n) {
@@ -15001,34 +14918,9 @@
             return (u.Item = r), u;
           }),
           "function" == typeof define && define.amd
-            ? define(
-                [
-                  "ev-emitter/ev-emitter",
-                  "get-size/get-size",
-                  "fizzy-ui-utils/utils",
-                  "./item",
-                ],
-                function (t, e, n, i) {
-                  return r(o, t, e, n, i);
-                }
-              )
-            : "object" == (void 0 === e ? "undefined" : i(e)) && e.exports
-            ? (e.exports = r(
-                o,
-                t("ev-emitter"),
-                t("get-size"),
-                t("fizzy-ui-utils"),
-                t("./item")
-              ))
-            : (o.Outlayer = r(
-                o,
-                o.EvEmitter,
-                o.getSize,
-                o.fizzyUIUtils,
-                o.Outlayer.Item
-              ));
+
       },
-      { "./item": 19, "ev-emitter": 6, "fizzy-ui-utils": 7, "get-size": 8 },
+
     ],
     21: [
       function (t, o, e) {

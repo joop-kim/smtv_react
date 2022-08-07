@@ -9,8 +9,9 @@ import "./assets/vendor/masterslider/skins/black-1/style.css";
 import "./assets/vendor/node_modules/css/swiper-bundle.min.css";
 import Carousel from 'react-bootstrap/Carousel';
 //import * as theme_bundle from "./assets/js/theme.bundle";
-//import * as "./assets/vendor/node_modules/js/jquery.min";
-//import * as masterslider from "./assets/vendor/masterslider/masterslider";
+//import * as jquery from "./assets/vendor/node_modules/js/jquery.min";
+//import * as masterslider from "./assets/vendor/masterslider/masterslider.min";
+//import * as swiper from "./assets/vendor/node_modules/js/swiper-bundle.min";
 
 
 
@@ -40,19 +41,27 @@ const customers = [
   {id:13, name:"부산정보산업진흥원", logo_url:"logo9.png"}
 ];
 
-function Navs(props) {
-  const ms = []
-  for (let i=0;i<props.menus.length;i++) {
-    let menu = props.menus[i];
+//News 
+const news_items =[
+  {id:1, img_url:"./assets/img/news01.jpg", reg_dt: "2022/07/05", sub_msg:"[한국문화정보원X그라운드업벤처스] '2022년 공공키움 사업'운영 위탁 선정"},
+  {id:2, img_url:"./assets/img/news02.jpg", reg_dt: "2022/05/30", sub_msg:"'서울핀테크랩' 운영 위탁 기업으로그라운드업벤처스 선정"},
+  {id:3, img_url:"./assets/img/news03.jpg", reg_dt: "2022/01/04", sub_msg:"더피치가 그라운드업 벤처스로 사명을 바꾸고 스타트업 부스팅 종합 플랫폼으로 진화"}
+]
+
+function Navs() {
+  const ms = [];
+  for (let i=0;i<menus.length;i++) {
+    let menu = menus[i];
     ms.push(
       <li className="nav-item dropdown" key={menu.id}>
-        <a className="nav-link" href={menu.menu_link}>
+        <a className="nav-link" href={menu.menu_link} role="button" aria-haspopup="true" aria-expanded="false" data-bs-auto-close="outside">
           {menu.menu_text}
         </a>
       </li>
     )
   }
   return (
+
     <div className="collapse navbar-collapse" id="mainNavbarTheme">
     <ul className="navbar-nav ms-auto me-5">
       {ms}
@@ -96,7 +105,7 @@ function Header(props) {
               </a>
             </div>
           </div>
-          <Navs menus={menus}></Navs>
+          <Navs></Navs>
         </div>
       </nav>
     </header>
@@ -112,11 +121,13 @@ function Mainslider() {
 
   function newFunction() {
     return (
-    <Carousel>
+    <Carousel className="ms-skin-black-2 master-slider" id="masterslider">
       <Carousel.Item>
-      <div className="bg-dark">
-        <img className="img-fluid" alt="" title="" src="./assets/img/smtv/gv_index_banner_1.jpg" />
-        <div className="text-white">
+      <div className="ms-slide bg-dark" data-delay="3" data-fill-mode="fill">
+        <img class="opacity-25" src="./assets/vendor/masterslider/style/blank.gif" alt="" title=""
+              data-src="./assets/img/smtv/gv_index_banner_1.jpg" />
+        
+        <div className="text-white carousel-caption">
           <div className="text-center display-5 ms-4 me-4">대한민국 스타트업 성장 파트너</div>
           <div className="text-center display-1 ms-4 me-4">그라운드업 벤처스</div>
         </div>
@@ -270,9 +281,9 @@ function Thirdslider() {
     >
       <div className="py-9 py-lg-11 container">
         <div className="row mb-7 align-items-center">
-          <div className="col-md-6 mb-5 mb-md-0">
-            <h2 className="display-5 mb-0" data-aos-delay="100">
-              Ground Up Ventures
+          <div className="col-md-12 mb-5 mb-md-0">
+            <h2 className="display-5 mb-0 text-center" data-aos-delay="100">
+              그라운드업 서비스
             </h2>
           </div>
           <div className="col-md-5 offset-lg-1">
@@ -452,130 +463,58 @@ function Ourcustomer() {
   );
 }
 
+
+
 function Gunews() {
+  const news_str = [];
+  for (let n=0;n<news_items.length;n++) {
+    let news_item = news_items[n];
+    news_str.push(
+      <div className="col-lg-4 mb-4 mb-lg-0">
+      <article className="card card-hover text-center hover-shadow-lg overflow-hidden border-0 rounded-3">
+        <div className="overflow-hidden position-relative">
+          <img
+            src={news_item.img_url}
+            alt=""
+            className="img-fluid img-zoom"
+          />
+          <svg
+            className="position-absolute start-0 bottom-0 mb-n1 text-white"
+            preserveAspectRatio="none"
+            width="100%"
+            height="48"
+            viewBox="0 0 1460 120"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M122 22.8261L0 0V120H1460V0L1338 22.8261C1217 44.1304 973 88.2609 730 88.2609C487 88.2609 243 44.1304 122 22.8261Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </div>
+        <div className="card-body pb-5 position-relative">
+          <small className="text-muted">
+            <i className="bx bx-calendar-alt me-1"></i> {news_item.reg_dt}
+          </small>
+          <h5 className="py-3 mb-0">
+            {news_item.sub_msg}
+          </h5>
+        </div>
+      </article>
+    </div>
+    );
+  }
   return (
     <section className="position-relative bg-light overflow-hidden">
       <div className="container py-9 py-lg-11 position-relative">
         <div className="row mb-7 align-items-end justify-content-between">
-          <div className="col-lg-7 mb-4 mb-lg-0">
+          <div className="col-lg-12 mb-4 mb-lg-0 text-center">
             <h2 className="mb-0 display-4">그라운드업 뉴스</h2>
-          </div>
-          <div className="col-12 col-lg-3 text-lg-end">
-            <a
-              href="https://blog.naver.com/thepitchkorea"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-outline-secondary btn-hover-arrow hover-lift"
-            >
-              <span>Our Blog</span>
-            </a>
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-4 mb-4 mb-lg-0">
-            <article className="card card-hover text-center hover-shadow-lg overflow-hidden border-0 rounded-3">
-              <div className="overflow-hidden position-relative">
-                <img
-                  src="./assets/img/news01.jpg"
-                  alt=""
-                  className="img-fluid img-zoom"
-                />
-                <svg
-                  className="position-absolute start-0 bottom-0 mb-n1 text-white"
-                  preserveAspectRatio="none"
-                  width="100%"
-                  height="48"
-                  viewBox="0 0 1460 120"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M122 22.8261L0 0V120H1460V0L1338 22.8261C1217 44.1304 973 88.2609 730 88.2609C487 88.2609 243 44.1304 122 22.8261Z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </div>
-              <div className="card-body pb-5 position-relative">
-                <small className="text-muted">
-                  <i className="bx bx-calendar-alt me-1"></i> 2022/07/05
-                </small>
-                <h5 className="py-3 mb-0">
-                  [한국문화정보원X그라운드업벤처스]
-                  <br /> '2022년 공공키움 사업'운영 위탁 선정
-                </h5>
-              </div>
-            </article>
-          </div>
-          <div className="col-lg-4 mb-4 mb-lg-0">
-            <article className="card card-hover text-center hover-shadow-lg overflow-hidden border-0 rounded-3">
-              <div className="overflow-hidden position-relative">
-                <img
-                  src="./assets/img/news02.jpg"
-                  alt=""
-                  className="img-fluid img-zoom"
-                />
-                <svg
-                  className="position-absolute mb-n1 start-0 bottom-0 text-white"
-                  preserveAspectRatio="none"
-                  width="100%"
-                  height="48"
-                  viewBox="0 0 1460 120"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M122 22.8261L0 0V120H1460V0L1338 22.8261C1217 44.1304 973 88.2609 730 88.2609C487 88.2609 243 44.1304 122 22.8261Z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </div>
-              <div className="card-body pb-5 position-relative">
-                <small className="text-muted">
-                  <i className="bx bx-calendar-alt me-1"></i> 2022/05/30
-                </small>
-                <h5 className="py-3 mb-0">
-                  '서울핀테크랩' 운영 위탁 기업으로
-                  <br />
-                  그라운드업벤처스 선정
-                </h5>
-              </div>
-            </article>
-          </div>
-          <div className="col-lg-4 mb-4 mb-lg-0">
-            <article className="card card-hover text-center hover-shadow-lg overflow-hidden border-0 rounded-3">
-              <div className="overflow-hidden position-relative">
-                <img
-                  src="./assets/img/news03.jpg"
-                  alt=""
-                  className="img-fluid img-zoom"
-                />
-                <svg
-                  className="position-absolute start-0 bottom-0 mb-n1 text-white"
-                  preserveAspectRatio="none"
-                  width="100%"
-                  height="48"
-                  viewBox="0 0 1460 120"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M122 22.8261L0 0V120H1460V0L1338 22.8261C1217 44.1304 973 88.2609 730 88.2609C487 88.2609 243 44.1304 122 22.8261Z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </div>
-              <div className="card-body pb-5 position-relative">
-                <small className="text-muted">
-                  <i className="bx bx-calendar-alt me-1"></i>2022/01/04
-                </small>
-                <h5 className="py-3 mb-0">
-                  더피치가 그라운드업 벤처스로 사명을 바꾸고
-                  <br />
-                  스타트업 부스팅 종합 플랫폼으로 진화
-                </h5>
-              </div>
-            </article>
-          </div>
+         {news_str}
         </div>
       </div>
     </section>
@@ -598,23 +537,5 @@ function App() {
     </>
   );
 }
-//theme_bundle.i();
-
-//var slider = masterslider;
-//slider.setup('masterslider', {
-//  width: 1140,
-// height: 660,
-//  minHeight: 400,
-//  space: 0,
-//  start: 1,
-//  grabCursor: false,
-//  layout: "fullwidth",
-//  wheel: false,
-//  autoplay: true,
-//  instantStartLayers: true,
-//  loop: true,
-//  view: "basic"
-//});
-//slider.control('arrows');
 
 export default App;

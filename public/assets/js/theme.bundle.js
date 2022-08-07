@@ -1,3 +1,4 @@
+/* eslint-disable */
 !(function i(o, r, s) {
   function a(e, t) {
     if (!r[e]) {
